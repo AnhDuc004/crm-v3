@@ -1,0 +1,76 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Helpers\Result;
+use App\Http\Requests\LoginRequest;
+use App\Repositories\AuthRepository;
+use App\Traits\ResponseTrait;
+use Exception;
+use Illuminate\Http\JsonResponse;
+
+class LoginController extends Controller
+{
+    use ResponseTrait;
+    const LOGIN_FAIL = 'Login failed';
+
+    public function __construct(private AuthRepository $auth)
+    {
+        $this->auth = $auth;
+    }
+
+    /**
+     * @OA\Post(
+     *     path="/api/login",
+     *     tags={"Authentication"},
+     *     summary="Login to system.",
+     *     description="Login",
+     *     operationId="login",
+     *     @OA\RequestBody(
+     *         description="Pet object that needs to be added to the store",
+     *         required=true,
+     *         @OA\MediaType(
+     *             mediaType="application/x-www-form-urlencoded",
+     *             @OA\Schema(
+     *                 type="object",
+     *                 @OA\Property(
+     *                     property="email",
+     *                     description="User email",
+     *                     type="string"
+     *                 ),
+     *                 @OA\Property(
+     *                     property="password",
+     *                     description="User password",
+     *                     type="string"
+     *                 ),
+     *                  required = {"email", "password"}
+     *             )
+     *         ),
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="successful operation",
+     *     ),
+     *     @OA\Response(
+     *         response=400,
+     *         description="Invalid input"
+     *     )
+     * )
+     */
+    public function login(LoginRequest $request): JsonResponse
+    {
+        try {
+            $data = $this->auth->login($request->all());
+            if (empty($data)) {
+                return Result::fail(self::LOGIN_FAIL);
+            }
+            return Result::success(['user' => $data['user']])
+                ->withHeaders([
+                    'Authorization' => "Bearer {$data['access_token']}",
+                    'token_type' => $data['token_type'],
+                ]);
+        } catch (Exception $exception) {
+            return Result::fail($exception->getMessage());
+        }
+    }
+}

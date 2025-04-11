@@ -1,0 +1,31 @@
+{
+    "name": "nwidart/tik",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Tik\\": "",
+            "Modules\\Tik\\App\\": "app/",
+            "Modules\\Tik\\Database\\Factories\\": "database/factories/",
+            "Modules\\Tik\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Tik\\Tests\\": "tests/"
+        }
+    }
+}

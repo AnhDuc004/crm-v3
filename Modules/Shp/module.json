@@ -1,0 +1,11 @@
+{
+    "name": "Shp",
+    "alias": "shp",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Shp\\App\\Providers\\ShpServiceProvider"
+    ],
+    "files": []
+}

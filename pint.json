@@ -1,0 +1,8 @@
+{
+    "preset": "psr12",
+    "rules": {
+        "braces": {
+            "allow_single_line_closure": true
+        }
+    }
+}

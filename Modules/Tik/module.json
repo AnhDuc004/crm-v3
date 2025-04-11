@@ -1,0 +1,11 @@
+{
+    "name": "Tik",
+    "alias": "tik",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Tik\\App\\Providers\\TikServiceProvider"
+    ],
+    "files": []
+}

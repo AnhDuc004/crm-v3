@@ -1,0 +1,31 @@
+{
+    "name": "nwidart/knowledgebase",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\KnowledgeBase\\": "",
+            "Modules\\KnowledgeBase\\App\\": "app/",
+            "Modules\\KnowledgeBase\\Database\\Factories\\": "database/factories/",
+            "Modules\\KnowledgeBase\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\KnowledgeBase\\Tests\\": "tests/"
+        }
+    }
+}

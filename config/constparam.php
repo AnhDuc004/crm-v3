@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'token' => 'token',
+    'token_name' => 'thc-csm',
+    'user_info' => 'user_info',
+    'user_name' => 'user_name',
+    "password" => 'password',
+    "c_password" => 'confirm_password',
+    'success' => 'success',
+    'error' => 'error',
+    'error_value' => 'Unauthorised',
+    'error_code' => 'error_code',
+    'error_mess' => 'error_mess',
+    'success' => 0,
+    'fail' => 1,
+    'invalid' => 2,
+    'permission' => 3,
+    'success_mess' => 'Success',
+    'fails_mess' => 'Fail',
+    'invalid_mess' => 'Fields is invalid',
+    'permission_mess' => 'Not permission',
+    'result' => 'result',
+    'regex_phone_number' => '/(\d)+\b/',
+    'regex_contact_group_stt' => '/([1,3])+/',
+];

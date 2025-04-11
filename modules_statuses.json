@@ -1,0 +1,20 @@
+{
+    "Binance": true,
+    "Customer": true,
+    "Administrator": true,
+    "Project": true,
+    "Task": true,
+    "Sale": true,
+    "Marketing": true,
+    "KnowledgeBase": true,
+    "Support": true,
+    "Admin": true,
+    "Campaign": true,
+    "Contract": true,
+    "Expense": true,
+    "Lead": true,
+    "Subscription": true,
+    "Inventory": true,
+    "Shp": true,
+    "Tik": true
+}
